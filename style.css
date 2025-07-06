@@ -7,78 +7,111 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fef6e4;
-  display: flex;
   min-height: 100vh;
+  display: flex;
 }
 
 .container {
   display: flex;
-  flex-direction: row;
   width: 100%;
+  height: 100vh;
 }
 
 .left {
   flex: 1;
-  background-image: url(images/Charity_photo.jpg); /* Replace with actual image path */
+  background-image: url('images/Charity_photo.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .right {
   flex: 1;
-  padding: 60px 40px;
+  position: relative;
+  background-color: #fef6e4;
+  padding: 80px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #fef6e4;
 }
 
 .logo {
-  width: 60px;
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  width: 240px;  /* Doubled size */
   height: auto;
-  margin-bottom: 30px;
+}
+
+.text-content {
+  max-width: 600px;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 3.8em;               /* Slightly larger */
+  font-weight: 800;
   color: #004080;
-  line-height: 1.3;
-  margin-bottom: 25px;
+  line-height: 1.05;             /* Reduced spacing */
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+h1 span {
+  display: block;
+  margin-bottom: 2px;           /* Tighter line spacing */
 }
 
 p {
-  font-size: 1.1em;
-  font-weight: bold;
+  font-size: 1.6em;
+  font-weight: 600;
   color: #222;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
 
 .cta-button {
   background-color: #ffd100;
   color: #000;
-  font-size: 1.2em;
-  padding: 15px 30px;
+  font-size: 1.3em;
+  padding: 18px 36px;
   border: none;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 6px;
   text-decoration: none;
-  display: inline-block;
   width: fit-content;
 }
 
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
 
   .left, .right {
-    flex: none;
     width: 100%;
     height: 50vh;
   }
 
   .right {
-    height: auto;
+    padding: 40px 30px;
+  }
+
+  .logo {
+    width: 100px;
+    top: 20px;
+    right: 30px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  .cta-button {
+    font-size: 1.1em;
+    padding: 14px 28px;
   }
 }
